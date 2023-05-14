@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>About App</title>
+    <link href="{{ url_for('static', path='/headcss.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/mdark.css') }}" rel="stylesheet">
+
 </head>
 <body>
-
+ {% include "headder.html" %}
+ <h2 class="main_page">About our App</h2>
+ <h2 class="main_page">This app is a final project for Jaydens python class at YellowWoodAcademy on 5/10/2023</h2>
+ <h2 class="main_page">It usees python -fastApi with Jinja right now, we hope to incorporate more elements later</h2>
+ <h2 class="main_page">...like some images of the cars and a chat</h2>
+ {% include "footer.html" %}
 </body>
+
+
+
 </html>

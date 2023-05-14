@@ -13,15 +13,22 @@ templates = Jinja2Templates(directory="templates")
 async def root(request: Request):
     return templates.TemplateResponse("base.html", {"request": request})
 
+@app.get("/add", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("add_car.html", {"request": request})
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+@app.get("/view_list", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("view_cars.html", {"request": request})
 
-@app.get("/test1", response_class=HTMLResponse)
-async def test1(request: Request):
-    return templates.TemplateResponse("test1.html", {"request": request})
+@app.get("/search", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("search_cars.html", {"request": request})
 
-@app.get("/test2", response_class=HTMLResponse)
-async def test2(request: Request):
-    return templates.TemplateResponse("test1.html", {"request": request})
+@app.get("/chat", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("chat.html", {"request": request})
+
+@app.get("/about", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
