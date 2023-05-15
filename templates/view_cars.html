@@ -3,18 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>View Cars</title>
-    <link href="{{ url_for('static', path='/headcss.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', path='/mdark.css') }}" rel="stylesheet">
-
+    <link href="{{ url_for('static', path='/toy.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 <body>
  {% include "headder.html" %}
- <br>
-<h2 id ="main">This is content from the base html page</h2>
-<br>
+
+<div id="main_view_table">
+  <h1>Table of Matchbox Cars</h1>
+   <table class="view_table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Color</th>
+				<th>Year</th>
+				<th>State-Cond</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for car in cars %}
+				<tr>
+					<td>{{ car['Name'] }}</td>
+					<td>{{ car['Color'] }}</td>
+					<td>{{ car['Year'] }}</td>
+					<td>{{ car['State'] }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
  {% include "footer.html" %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.view_table').DataTable();
+  });
+</script>
 </body>
-
-
-
 </html>

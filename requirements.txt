@@ -1,10 +1,13 @@
+# use pip install -r requirements.txt   from command line to install all dependencys listed in this file
+
 fastapi
 uvicorn
-
 
 # for template
 jinja2
 
-
 #for static files
 aiofiles
+
+# for forms to work
+python-multipart

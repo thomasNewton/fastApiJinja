@@ -1,6 +1,9 @@
 from pydantic import BaseModel
 from enum import Enum
-class Conditon( str,Enum):
+
+
+
+class Cond( str,Enum):
     Mint = "Mint"
     Good = "Good"
     Fair = "Fair"
@@ -10,6 +13,6 @@ class Conditon( str,Enum):
 class MatchBoxCar(BaseModel):
     Name: str
     Color: str
-    Manufacture_Date: int
-    Quality: Conditon
+    Year: int
+    State: Cond
 
